@@ -46,3 +46,5 @@ FROM supplier AS s,
      part AS p,
      project AS j
 WHERE s.CITY=p.CITY AND p.CITY=j.CITY;
+
+
