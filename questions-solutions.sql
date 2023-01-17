@@ -34,7 +34,7 @@ SELECT CONCAT_WS("\t",
 -- "as" is used to give alias (a temporary name)
 
 /* 6 Get all supplier -number/part- number/project- number triples such that the indicated supplier, part and
-    project are all collocated (i.e. all in the same city). */
+    project are all collocated (i.e. all in the same city). output: https://prnt.sc/RZkLL_qFr9_U */
 -- for above we have to specify a inner join as we want the same/common data from different tables.
 SELECT CONCAT_WS("->", s.SNO, p.PNO, j.JNO) AS columnName, s.CITY
 FROM supplier AS s
@@ -46,5 +46,4 @@ FROM supplier AS s,
      part AS p,
      project AS j
 WHERE s.CITY=p.CITY AND p.CITY=j.CITY;
-
-
+-- A JOIN clause is used to combine rows from two or more tables, based on a related column between them.
