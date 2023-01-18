@@ -38,12 +38,56 @@ SELECT CONCAT_WS("\t",
 -- for above we have to specify a inner join as we want the same/common data from different tables.
 SELECT CONCAT_WS("->", s.SNO, p.PNO, j.JNO) AS columnName, s.CITY
 FROM supplier AS s
-     JOIN part AS p ON s.CITY = p.CITY
-     JOIN project AS j ON p.CITY = j.CITY;
+     JOIN part AS p
+     JOIN project AS j ON p.CITY = j.CITY AND j.CITY = s.CITY;
 -- OR
-SELECT CONCAT_WS("->", s.SNO, p.PNO, j.JNO) AS columnName, s.CITY
+SELECT CONCAT_WS("->", s.SNO, p.PNO, j.JNO) AS columnName,
+       s.CITY AS supplierCity,
+       p.CITY AS partCity,
+       j.CITY AS projectCity
 FROM supplier AS s,
      part AS p,
      project AS j
-WHERE s.CITY=p.CITY AND p.CITY=j.CITY;
+WHERE s.CITY=p.CITY AND p.CITY=j.CITY  AND s.CITY = j.CITY;
 -- A JOIN clause is used to combine rows from two or more tables, based on a related column between them.
+
+/* 7.  Get all supplier -number/part- number/project- number triples such that the indicated supplier, part
+and project are not all collocated. output: https://prnt.sc/FVrRIegH5gLh */
+SELECT CONCAT_WS("->", s.SNO, p.PNO, j.JNO) AS columnName,
+       s.CITY AS supplierCity,
+       p.CITY AS partCity,
+       j.CITY AS projectCity
+FROM supplier AS s,
+     part AS p,
+     project AS j
+WHERE NOT (s.CITY=p.CITY AND p.CITY=j.CITY AND s.CITY = j.CITY);
+-- OR
+SELECT CONCAT_WS(" -> ", s.SNO, p.PNO, j.JNO) AS columnName,
+       s.CITY AS supplierCity,
+       p.CITY AS partCity,
+       j.CITY AS projectCity
+FROM supplier AS s
+     JOIN part AS p
+     JOIN project AS j ON NOT (p.CITY = j.CITY AND j.CITY = s.CITY AND s.CITY = j.CITY);
+
+/* 8. Get all supplier -number/part- number/project- number triples such that no two of the indicated
+supplier, part and project are collocated. */
+SELECT CONCAT_WS(" -> ", s.SNO, p.PNO, j.JNO) AS columnName,
+       s.CITY AS supplierCity,
+       p.CITY AS partCity,
+       j.CITY AS projectCity
+FROM supplier AS s
+    JOIN part AS p
+    JOIN project j ON NOT s.CITY = p.CITY AND NOT p.CITY = j.CITY AND NOT s.CITY = j.CITY;
+-- OR
+SELECT CONCAT_WS(" -> ", s.SNO, p.PNO, j.JNO) AS columnName,
+       s.CITY AS supplierCity,
+       p.CITY AS partCity,
+       j.CITY AS projectCity
+FROM supplier AS s,
+    part AS p,
+    project j
+WHERE NOT s.CITY = p.CITY AND NOT p.CITY = j.CITY AND NOT s.CITY = j.CITY;
+
+-- 9. Get full details for parts supplied by the supplier in the London.
+

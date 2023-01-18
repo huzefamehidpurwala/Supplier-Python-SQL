@@ -1,0 +1,88 @@
+Write SQL Queries for the above database:
+1 Get Full details of all projects.
+
+2 Get Full details of all projects in London.
+
+3 Get supplier numbers for suppliers who supply projects J1.
+
+4 Get all shipments where the quantity is in the range 300 to 750 inclusive.
+
+5 Get all part-color/part-city pairs. Note : Here and subsequently, the terms “all” means “all currently
+represented in the database, “ not “all possible”.
+
+6 Get all supplier -number/part- number/project- number triples such that the indicated supplier, part and
+project are all collocated (i.e. all in the same city).
+
+7 Get all supplier -number/part- number/project- number triples such that the indicated supplier, part
+and project are not all collocated.
+
+8 Get all supplier -number/part- number/project- number triples such that no two of the indicated
+supplier, part and project are collocated.
+
+9 Get full details for parts supplied by the supplier in the London.
+
+10 Get part numbers for parts supplied by a supplier in London to a project in London.
+
+11 Get all pairs of city names such that a supplier in the first city supplies a project in the second city.
+
+12 Get part numbers for parts supplied to any project by a supplier in the same city as that project.
+
+13 Get project numbers for projects supplied by at least one supplier not in the same city.
+
+14 Get all pairs of part numbers such that some supplier supplies both the indicated parts.
+
+15 Get the total number of projects supplied by supplier S1.
+
+16 Get the total quantity of part P1 supplied by supplier S1.
+
+17 For each part being supplied to a project, get the part number, the project number, and the
+corresponding total quantity.
+
+18 Get part numbers of parts supplied to some project in an average quantity of more than 350.
+
+19 Get project names for projects supplied by supplier S1.
+
+20 Get colors of parts supplied by supplier S1.
+
+21 Get part numbers for parts supplied to any project in London.
+
+22 Get project numbers for projects using at least one part available from supplier S1.
+
+23 Get supplier numbers for suppliers supplying at least one part supplied by at least one supplier who
+supplies at least one red part.
+
+24 Get supplier numbers for suppliers with a status lower than that of supplier S1.
+
+25 Get project numbers for projects whose city is first in the alphabetic list of such cities
+
+26 Get project numbers for projects supplied with part P1 in an average quantity greater than the greatest
+quantity in which any part is supplied to project J1
+
+27 Get supplier numbers for suppliers supplying some project with part P1 in a quantity greater than the
+average shipment quantity of part P1 for that project.
+
+28 Get project numbers for project not supplied with any red part by any London supplier.
+
+29 Get project numbers for projects supplied entirely by supplier SI.
+
+30 Get part numbers for parts supplied to all projects in London.
+
+31 Get supplier numbers for suppliers who supply the same part to all projects.
+
+32 Get project numbers for projects supplied with at least all parts available from
+supplier SI.
+
+33 Get all cities in which at least one supplier. Part. Or project is located.
+
+34 Get part numbers for parts that are supplied either by London supplier or to a London
+project.
+
+35 Get supplier-number/part-number pairs such that the indicated supplier does not
+supply the indicated part.
+
+36 Get all pairs of supplier numbers, Sx and Sy say. Such that Sx and Sy supply exactly
+the same set of parts each. Note: For simplicity, you might want to use the original
+suppliers-and-part data-base for this exercise, instead of the expanded suppliers-partprojects database.
+
+37 Get a “grouped” version of all shipment showing, for each suppliers-number/partnumber pair, the corresponding project numbers and quantities in the form of a binary
+relation.

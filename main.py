@@ -11,14 +11,24 @@ db = mysql.connector.connect(
 # Create a cursor object
 cursor = db.cursor()
 
+# Read the SQL file
+with open("path/to/file.sql", 'r') as f:
+    sql = f.read()
+
+# Execute the SQL commands
+cursor.execute(sql)
+
+# Commit the changes to the database
+db.commit()
+
 # Read data from text files
-with open("supplier.txt") as f:
+with open("Databases/supplier.txt") as f:
     supplier_data = f.readlines()
-with open("shipment.txt") as f:
+with open("Databases/shipment.txt") as f:
     shipment_data = f.readlines()
-with open("project.txt") as f:
+with open("Databases/project.txt") as f:
     project_data = f.readlines()
-with open("part.txt") as f:
+with open("Databases/part.txt") as f:
     part_data = f.readlines()
 
 # Iterate over each line of data and insert it into the corresponding table

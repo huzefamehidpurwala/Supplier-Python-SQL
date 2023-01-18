@@ -9,5 +9,7 @@ Read about this repository [here](ABOUT.md).
 4. Activate the environment:
    - for windows `Supplier-Python-SQL_venv\Scripts\activate`
    - for linux `Supplier-Python-SQL_venv/bin/activate`
+5. Install necessary python modules by `pip install mysql-connector-python`.
+6. Now execute the _python script_ by `python main.py`.
 
-***Still work going on...! Stay tuned!*** 🎁
+***Now you have your database and tables ready to solve SQL Challenge!*** ‍🎓
