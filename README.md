@@ -10,6 +10,11 @@ Read about this repository [here](ABOUT.md).
    - for windows `Supplier-Python-SQL_venv\Scripts\activate`
    - for linux `Supplier-Python-SQL_venv/bin/activate`
 5. Install necessary python modules by `pip install mysql-connector-python`.
-6. Now execute the _python script_ by `python main.py`.
+6. Open `main.py` in editing mode:
+   - Windows `notepad main.py`
+   - Linux `nano main.py`
+   
+   Enter the "username" and "password" of the mysql having major rights for editing the tables and databases accordingly and save the file.
+7. Now execute the _python script_ by `python main.py`.
 
 ***Now you have your database and tables ready to solve SQL Challenge!*** ‍🎓
