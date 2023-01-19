@@ -90,4 +90,33 @@ FROM supplier AS s,
 WHERE NOT s.CITY = p.CITY AND NOT p.CITY = j.CITY AND NOT s.CITY = j.CITY;
 
 -- 9. Get full details for parts supplied by the supplier in the London.
+SELECT * FROM part WHERE CITY="London";
+
+-- 10. Get part numbers for parts supplied by a supplier in London to a project in London.
+SELECT DISTINCT part.PNO-- , part.CITY, p.CITY
+FROM part
+LEFT JOIN project p on part.CITY = p.CITY WHERE p.CITY="LONDON"
+ORDER BY part.PNO;
+-- DISTINCT keyword is used to filter the repeated data rows
+-- ORDER BY is used sort data in ascending or descending with respect to specified column. default is ASC, can use DESC.
+
+-- 11. Get all pairs of city names such that a supplier in the first city supplies a project in the second city.
+
+
+-- 15. Get the total number of projects supplied by supplier S1.
+SELECT SNO, COUNT(JNO) AS totalNumProjects
+FROM shipment
+WHERE SNO="S1"
+GROUP BY SNO;
+-- COUNT() function returns the number of records returned by a select query
+-- The GROUP BY statement groups rows that have the same values into summary rows, often used with aggregate functions
+-- to group the result-set by one or more columns.
+
+-- 16. Get the total quantity of part P1 supplied by supplier S1.
+SELECT SNO, PNO, SUM(QTY) totalQuantity
+FROM shipment
+WHERE SNO="S1" AND PNO="P1"
+GROUP BY SNO;
+-- SUM function is used sum the values of select query
+
 
