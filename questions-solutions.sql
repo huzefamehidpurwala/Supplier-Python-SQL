@@ -119,4 +119,4 @@ WHERE SNO="S1" AND PNO="P1"
 GROUP BY SNO;
 -- SUM function is used sum the values of select query
 
-
+--
